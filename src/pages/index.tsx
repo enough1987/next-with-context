@@ -18,6 +18,7 @@ export default React.memo(function Home() {
       </Head>
       <Header name="Main page">
         <ButtonLink name="Counter" href="/counter" />
+        <ButtonLink name="About" href="/about" />
        </Header>
       <main className={`${styles.main} ${inter.className}`}>
       </main>

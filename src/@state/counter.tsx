@@ -5,6 +5,7 @@ export const CounterContext = React.createContext({
     counter: 0, 
     increment: () => {}, 
     decrement: () => {},
+    clear: () => {},
   });
 
 interface ICounterProviderProps {
@@ -27,9 +28,13 @@ export  const CounterProvider = ({ children, initialCount = 0 }: ICounterProvide
       localStorage.setItem(COUNTER_STORAGE_KEY, (prev - 1).toString())
       return prev - 1;
     });
+    const clear = () => setCounter(() => {
+        localStorage.setItem(COUNTER_STORAGE_KEY, '0')
+        return 0;
+      });
   
     return (
-        <CounterContext.Provider value={{ counter, increment, decrement }}>
+        <CounterContext.Provider value={{ counter, increment, decrement, clear }}>
             {children}
         </CounterContext.Provider>
     )
