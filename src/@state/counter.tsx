@@ -34,3 +34,5 @@ export  const CounterProvider = ({ children, initialCount = 0 }: ICounterProvide
         </CounterContext.Provider>
     )
 };
+
+export const useCounterContext = () => React.useContext(CounterContext)
