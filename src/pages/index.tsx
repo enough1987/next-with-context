@@ -33,6 +33,9 @@ export default React.memo(function Home({ data }: IHomeProps) {
       <Header name="Main page">
         <ButtonLink name="Counter" href="/counter" />
         <ButtonLink name="About" href="/about" />
+        <ButtonLink name="Nested" href="/nested" />
+        <ButtonLink name="Nested 2" href="/nested/test" />
+        <ButtonLink name="Nested 3" href="/nested/test/3" />
        </Header>
       <main className={`${styles.main} ${inter.className}`}>
         <ul>
