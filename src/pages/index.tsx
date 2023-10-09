@@ -10,9 +10,9 @@ const inter = Inter({ subsets: ['latin'] })
 
 
 export const getServerSideProps = (async (_context) => {
-  const data = [1,2,3,4,5,6,7,8,9,10];
+  const data = await fetch(`${process.env.URL}/api/hello`).then(response => response.json());
 
-  return { props: { data } }
+  return { props: { data: data.data } }
 }) satisfies GetServerSideProps<{
   data: number[]
 }>
